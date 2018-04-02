@@ -6,10 +6,19 @@ class Menu extends React.Component {
             counter: 1
 
         };
+        this.buttonMenuClick = this.buttonMenuClick.bind(this);
+        this.state = {
+
+            isCardView1: false
+        };
     }
 
     buttonClick() {
         this.setState({ counter: ++this.state.counter });
+    }
+
+    buttonMenuClick() {
+        this.setState({ isCardView1: !this.state.isCardView1 });
     }
 
     render() {
@@ -29,8 +38,8 @@ class Menu extends React.Component {
                         React.createElement(
                             "label",
                             { className: "toggle", htmlFor: "ResponsiveMenu1-submenu", id: "ResponsiveMenu1-title" },
-                            React.createElement(Text, { counter: this.state.counter }),
-                            React.createElement(ButtonMenu, { handler: this.buttonClick })
+                            React.createElement(Text, { counter: this.state.id }),
+                            React.createElement(ButtonMenu, { bbb: this.buttonMenuClick, vvv: this.state.isCardView1 })
                         ),
                         React.createElement("input", { type: "checkbox", id: "ResponsiveMenu1-submenu" }),
                         React.createElement(
@@ -101,7 +110,7 @@ class ButtonMenu extends React.Component {
     render() {
         let indents = [];
 
-        for (let i = 0; i < 6; i++) {
+        for (let i = 0; i < 3; i++) {
             indents.push(React.createElement(
                 "span",
                 { key: i },
@@ -110,8 +119,8 @@ class ButtonMenu extends React.Component {
         }
         let sp = React.createElement(
             "span",
-            { id: "ResponsiveMenu1-icon", onClick: this.props.handler },
-            indents
+            { id: "ResponsiveMenu1-icon", onClick: this.props.bbb },
+            this.props.vvv ? React.createElement("span", { className: "glyphicon glyphicon-remove-sign" }) : indents
         );
         return sp;
     }
@@ -129,3 +138,37 @@ class Text extends React.Component {
 }
 
 ReactDOM.render(React.createElement(Menu, null), document.getElementById("menu"));
+
+// class IconButton extends React.Component {
+//     constructor(props) {
+//         super(props);
+//         this.state = {
+//             isCardView: false,
+//         }
+//     }
+//
+//     render() {
+//         return (
+//             <a className="btn btn-primary" onClick={()=>this.setState({ isCardView: !this.state.isCardView })}>
+//                 { this.state.isCardView
+//                     ? <span className="glyphicon glyphicon-remove-sign" />
+//                     : <span className="glyphicon glyphicon-ok-sign" />
+//                 }
+//                 &nbsp;&nbsp;BUTTON
+//             </a>
+//         );
+//     }
+//
+// }
+//
+// class App extends React.Component {
+//     render () {
+//         return (
+//             <div>
+//                 <IconButton />
+//             </div>
+//         );
+//     }
+// }
+//
+// ReactDOM.render(<App/>,document.getElementById('root'));
