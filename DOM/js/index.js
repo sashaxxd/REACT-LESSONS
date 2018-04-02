@@ -38,7 +38,7 @@ class Menu extends React.Component {
                                 )
                             )
                         ),
-                        React.createElement("input", { type: "text", id: "ResponsiveMenu1-submenu" }),
+                        React.createElement("input", { type: "checkbox", id: "ResponsiveMenu1-submenu" }),
                         React.createElement(
                             "ul",
                             { className: "ResponsiveMenu1", id: "ResponsiveMenu1" },
@@ -47,7 +47,7 @@ class Menu extends React.Component {
                                 null,
                                 React.createElement(
                                     "a",
-                                    { href: "http://" },
+                                    { href: "#" },
                                     "\u0413\u043B\u0430\u0432\u043D\u0430\u044F"
                                 )
                             ),
@@ -56,7 +56,7 @@ class Menu extends React.Component {
                                 null,
                                 React.createElement(
                                     "a",
-                                    { href: "http://" },
+                                    { href: "#" },
                                     "\u041E\xA0\u043D\u0430\u0441"
                                 )
                             ),
@@ -65,7 +65,7 @@ class Menu extends React.Component {
                                 null,
                                 React.createElement(
                                     "a",
-                                    { href: "http://" },
+                                    { href: "#" },
                                     "\u041A\u043E\u043D\u0442\u0430\u043A\u0442\u044B"
                                 )
                             )
