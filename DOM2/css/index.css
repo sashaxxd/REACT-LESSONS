@@ -15,7 +15,7 @@ body {
 }
 #ResponsiveMenu1 {
    background-color: #FF8C00;
-
+   height: 46px;
 }
 #site_ResponsiveMenu1 ul {
    list-style: none;
@@ -117,7 +117,6 @@ body {
    vertical-align: middle;
    width: 0;
 }
-
 #site_ResponsiveMenu1 li a:hover .arrow-down {
    border-top-color: #FFFFFF;
 }
@@ -171,7 +170,7 @@ body {
    display: block  !important;
 }
 #ResponsiveMenu1-title {
-
+   height: 46px;
    line-height: 46px  !important;
    text-align: center;
 }
@@ -328,37 +327,37 @@ body {
 /**
 Кнопка закрытия меню
 */
-/*#ResponsiveMenu-icon1:hover{*/
-   /*cursor: pointer;*/
-/*}*/
-/*#site_ResponsiveMenu1 .toggle:hover {*/
-   /*background-color: #D7489A;*/
-   /*color: #009966;*/
-/*}*/
+#ResponsiveMenu-icon1:hover{
+   cursor: pointer;
+}
+#site_ResponsiveMenu1 .toggle:hover {
 
-/*.m_close {*/
-   /*position: relative;*/
-   /*left: 0px;*/
-   /*top: 25px;*/
-   /*!*width: 23px;*!*/
-   /*height: 23px;*/
-   /*opacity: 1;*/
-   /*cursor: pointer;*/
-/*}*/
-/*.m_close:hover {*/
-   /*opacity: 1;*/
-/*}*/
-/*.m_close:before, .m_close:after {*/
-   /*position: absolute;*/
-   /*left: 15px;*/
-   /*content: ' ';*/
-   /*height: 23px;*/
-   /*width: 2px;*/
-   /*background-color: #FFFFFF;*/
-/*}*/
-/*.m_close:before {*/
-   /*transform: rotate(45deg);*/
-/*}*/
-/*.m_close:after {*/
-   /*transform: rotate(-45deg);*/
-/*}*/
+}
+
+.m_close {
+   position: relative;
+   left: 0px;
+   top: 25px;
+   /*width: 23px;*/
+   height: 23px;
+   opacity: 1;
+   cursor: pointer;
+}
+.m_close:hover {
+   opacity: 1;
+}
+.m_close:before, .m_close:after {
+   position: absolute;
+   left: 15px;
+   content: ' ';
+   height: 23px;
+   width: 2px;
+   background-color: #FFFFFF;
+}
+.m_close:before {
+   transform: rotate(45deg);
+}
+.m_close:after {
+   transform: rotate(-45deg);
+}
+
