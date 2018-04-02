@@ -1,4 +1,16 @@
 class Menu extends React.Component {
+    constructor(props) {
+        super(props);
+        this.buttonClick = this.buttonClick.bind(this);
+        this.state = {
+            counter: 0
+
+        };
+    }
+
+    buttonClick() {
+        this.setState({ counter: ++this.state.counter });
+    }
 
     render() {
 
@@ -17,7 +29,7 @@ class Menu extends React.Component {
                         React.createElement(
                             "label",
                             { className: "toggle", htmlFor: "ResponsiveMenu1-submenu", id: "ResponsiveMenu1-title" },
-                            "Menu",
+                            React.createElement(Text, { counter: this.state.counter }),
                             React.createElement(
                                 "span",
                                 { id: "ResponsiveMenu1-icon" },
@@ -78,7 +90,38 @@ class Menu extends React.Component {
         return React.createElement(
             "div",
             { id: "site_LayoutGrid1" },
-            x
+            x,
+            React.createElement(Button, {
+                counter: this.state.counter,
+                handler: this.buttonClick
+            }),
+            React.createElement(Text, {
+                counter: this.state.counter
+            })
+        );
+    }
+}
+
+class Button extends React.Component {
+    render() {
+        return React.createElement(
+            "button",
+            {
+                onClick: this.props.handler
+            },
+            "\u041D\u0410\u0416\u0410\u0422\u042C ",
+            this.props.counter
+        );
+    }
+}
+
+class Text extends React.Component {
+    render() {
+        return React.createElement(
+            "div",
+            null,
+            "\u041D\u0410\u0416\u0410\u0422\u041E ",
+            this.props.counter
         );
     }
 }
