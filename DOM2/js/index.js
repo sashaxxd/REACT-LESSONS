@@ -1,20 +1,13 @@
 class Menu extends React.Component {
     constructor(props) {
         super(props);
-        this.buttonClick = this.buttonClick.bind(this);
-        this.state = {
-            counter: 1
 
-        };
         this.buttonMenuClick = this.buttonMenuClick.bind(this);
+
         this.state = {
 
             isCardView1: false
         };
-    }
-
-    buttonClick() {
-        this.setState({ counter: ++this.state.counter });
     }
 
     buttonMenuClick() {
@@ -38,10 +31,10 @@ class Menu extends React.Component {
                         React.createElement(
                             "label",
                             { className: "toggle", htmlFor: "ResponsiveMenu1-submenu", id: "ResponsiveMenu1-title" },
-                            React.createElement(Text, { counter: this.state.id }),
-                            React.createElement(ButtonMenu, { bbb: this.buttonMenuClick, vvv: this.state.isCardView1 })
+                            "\u041C\u0435\u043D\u044E ",
+                            React.createElement(ButtonMenu, { StateButton: this.state.isCardView1 })
                         ),
-                        React.createElement("input", { type: "checkbox", id: "ResponsiveMenu1-submenu" }),
+                        React.createElement(Input, { updateStateButton: this.buttonMenuClick }),
                         React.createElement(
                             "ul",
                             { className: "ResponsiveMenu1", id: "ResponsiveMenu1" },
@@ -81,28 +74,14 @@ class Menu extends React.Component {
         return React.createElement(
             "div",
             { id: "site_LayoutGrid1" },
-            x,
-            React.createElement(Button, {
-                counter: this.state.counter,
-                handler: this.buttonClick
-            }),
-            React.createElement(Text, {
-                counter: this.state.counter
-            })
+            x
         );
     }
 }
 
-class Button extends React.Component {
+class Input extends React.Component {
     render() {
-        return React.createElement(
-            "button",
-            {
-                onClick: this.props.handler
-            },
-            "\u041D\u0410\u0416\u0410\u0422\u042C ",
-            this.props.counter
-        );
+        return React.createElement("input", { type: "checkbox", id: "ResponsiveMenu1-submenu", onClick: this.props.updateStateButton });
     }
 }
 
@@ -119,56 +98,15 @@ class ButtonMenu extends React.Component {
         }
         let sp = React.createElement(
             "span",
-            { id: "ResponsiveMenu1-icon", onClick: this.props.bbb },
-            this.props.vvv ? React.createElement("span", { className: "glyphicon glyphicon-remove-sign" }) : indents
+            { id: "ResponsiveMenu1-icon" },
+            this.props.StateButton ? React.createElement(
+                "div",
+                null,
+                React.createElement("div", { className: "m_close" })
+            ) : indents
         );
         return sp;
     }
 }
 
-class Text extends React.Component {
-    render() {
-        return React.createElement(
-            "div",
-            null,
-            "\u041D\u0410\u0416\u0410\u0422\u041E ",
-            this.props.counter
-        );
-    }
-}
-
 ReactDOM.render(React.createElement(Menu, null), document.getElementById("menu"));
-
-// class IconButton extends React.Component {
-//     constructor(props) {
-//         super(props);
-//         this.state = {
-//             isCardView: false,
-//         }
-//     }
-//
-//     render() {
-//         return (
-//             <a className="btn btn-primary" onClick={()=>this.setState({ isCardView: !this.state.isCardView })}>
-//                 { this.state.isCardView
-//                     ? <span className="glyphicon glyphicon-remove-sign" />
-//                     : <span className="glyphicon glyphicon-ok-sign" />
-//                 }
-//                 &nbsp;&nbsp;BUTTON
-//             </a>
-//         );
-//     }
-//
-// }
-//
-// class App extends React.Component {
-//     render () {
-//         return (
-//             <div>
-//                 <IconButton />
-//             </div>
-//         );
-//     }
-// }
-//
-// ReactDOM.render(<App/>,document.getElementById('root'));
